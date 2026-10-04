@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediMRF | Automated Waste Sorting for Healthcare</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff8ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#1d8df5',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom glow and backdrop effects */
+    .hero-glow {
+      background: radial-gradient(circle at 50% 20%, rgba(29, 141, 245, 0.15) 0%, rgba(2, 132, 199, 0.05) 45%, rgba(15, 23, 42, 0) 70%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(51, 65, 85, 0.5);
+    }
+    .grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Wordmark -->
+      <a href="#" class="flex items-center gap-3 group">
+        <!-- Attempts to load the user's uploaded logo.png if hosted alongside index.html; fallbacks to high-fidelity SVG -->
+        <img 
+          src="logo.png" 
+          alt="MediMRF Logo" 
+          class="h-10 w-auto object-contain block"
+          onerror="this.style.display='none'; document.getElementById('svg-logo-fallback').style.display='flex';"
+        />
+        
+        <!-- SVG Vector Logo Fallback matching the brand icon -->
+        <div id="svg-logo-fallback" class="hidden items-center gap-2.5">
+          <div class="flex items-baseline tracking-tight font-black text-2xl sm:text-3xl leading-none">
+            <span class="text-slate-950 font-extrabold tracking-tight">Medi</span>
+            <span class="text-brand-500 font-black tracking-tight">MRF</span>
+          </div>
+          <!-- 3D Medical Isometric Cube Symbol -->
+          <svg class="w-8 h-8 text-brand-500 transform hover:scale-105 transition-transform" viewBox="0 0 100 80" fill="currentColor">
+            <path d="M50 0 L95 24 L50 48 L5 24 Z" fill="#2563eb" />
+            <path d="M5 24 L50 48 L50 80 L5 56 Z" fill="#1d4ed8" />
+            <path d="M50 48 L95 24 L95 56 L50 80 Z" fill="#1e40af" />
+            <!-- Isometric White Cross -->
+            <polygon points="50,14 56,17 56,23 62,26 56,29 56,35 50,32 50,38 44,35 44,29 38,26 44,23 44,17" fill="#ffffff" opacity="0.9" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Quick Nav Action Buttons -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <a 
+          href="#media" 
+          class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors py-2 px-3">
+          <i data-lucide="play-circle" class="w-4 h-4"></i>
+          Videos & Research
+        </a>
+        <a 
+          href="#contact" 
+          class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-brand-600 transition-all shadow-sm hover:shadow">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden grid-pattern">
+      <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center max-w-3xl mx-auto">
+          
+          <!-- Coming Soon Indicator Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-brand-700 text-xs sm:text-sm font-medium mb-8 shadow-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
+            </span>
+            <span class="font-semibold tracking-wide">Under Active Development • Launching Soon</span>
+          </div>
+
+          <!-- Primary Hero Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+            Revolutionizing Healthcare Waste Management with <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-sky-600 to-indigo-600">AI & Robotics</span>
+          </h1>
+
+          <!-- Value Proposition Subtitle -->
+          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal mb-10 max-w-2xl mx-auto">
+            Modular, automated material recovery facilities engineered for hospital loading docks — drastically cutting regulated medical waste disposal costs, mitigating human contamination risks, and driving clinical sustainability.
+          </p>
+
+          <!-- Primary CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="mailto:medimrfcompany@gmail.com?subject=MediMRF%20Inquiry%20-%20Partnership%20/%20Pilot" 
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 text-white text-base font-semibold hover:bg-blue-700 shadow-lg shadow-blue-500/25 transition-all transform hover:-translate-y-0.5">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Connect with Our Team</span>
+            </a>
+            
+            <a 
+              href="https://youtu.be/0gG8oQqV74Q?si=59xn70BxoUJmeYLB" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white text-slate-700 text-base font-semibold border border-slate-300 hover:bg-slate-50 hover:text-slate-900 transition-all shadow-sm">
+              <i data-lucide="play" class="w-4 h-4 text-blue-600 fill-blue-600"></i>
+              <span>Watch Product Demo</span>
+            </a>
+          </div>
+
+          <!-- Quick Trust Proof Pill -->
+          <div class="mt-12 pt-8 border-t border-slate-200/60 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-600"></i>
+              <span>UCSB Bren School Eco-Entrepreneurship Project</span>
+            </div>
+            <span class="hidden sm:inline text-slate-300">•</span>
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i>
+              <span>Hospital Loading Bay Optimized</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Value Pillars Section -->
+    <section class="py-16 sm:py-24 bg-white border-y border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">Our Technological Innovation</h2>
+          <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Solving Hospital Waste at the Loading Dock</p>
+          <p class="text-slate-600 mt-3 text-base">Hospitals misclassify tons of clean plastics as biohazard red bags. MediMRF corrects sorting upstream.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="relative p-8 rounded-2xl bg-slate-50/70 border border-slate-200 hover:border-brand-300 transition-all duration-300 hover:shadow-lg group">
+            <div class="w-12 h-12 rounded-xl bg-blue-100/80 text-brand-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">AI & Computer Vision Sorting</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Trained classification algorithms rapidly differentiate rigid clean clinical plastics, recyclable packaging, and regulated hazardous streams with high precision.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="relative p-8 rounded-2xl bg-slate-50/70 border border-slate-200 hover:border-brand-300 transition-all duration-300 hover:shadow-lg group">
+            <div class="w-12 h-12 rounded-xl bg-sky-100/80 text-sky-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="box" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Modular Dock Integration</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Designed with a compact, skid-mounted footprint engineered to retrofit existing hospital loading bays, service elevators, and waste compactor corridors without structural overhauls.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="relative p-8 rounded-2xl bg-slate-50/70 border border-slate-200 hover:border-brand-300 transition-all duration-300 hover:shadow-lg group">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100/80 text-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="trending-down" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Cost Reductions & ESG Impact</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Redirecting misplaced benign waste from pricey autoclave/incineration streams ($0.30+/lb) into recycling saves hundreds of thousands annually while boosting healthcare ESG metrics.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Media, Videos & Academic Hub -->
+    <section id="media" class="py-16 sm:py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Research & Demonstrations</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Explore MediMRF Media</h2>
+          </div>
+          <p class="text-slate-600 text-sm max-w-md mt-2 md:mt-0">
+            View our functional prototype recordings, meet the engineering team, and read our comprehensive academic publication.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1: Product Video -->
+          <a 
+            href="https://youtu.be/0gG8oQqV74Q?si=59xn70BxoUJmeYLB" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="group bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="relative w-full h-40 bg-slate-900 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                <!-- Thumbnail Placeholder with play button -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+                <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform z-20">
+                  <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                </div>
+                <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                  YouTube Demo
+                </div>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
+                Product Showcase Video
+              </h3>
+              <p class="text-slate-500 text-xs mt-1.5 line-clamp-2">
+                Watch our automated sorting mechanism in action distinguishing clinical plastic material streams.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+              <span>Watch Video</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Card 2: Team Video -->
+          <a 
+            href="https://youtu.be/KKusswZoDmQ?si=fyq3ahYZ7sjH5EpH" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="group bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="relative w-full h-40 bg-slate-900 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10"></div>
+                <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform z-20">
+                  <i data-lucide="users" class="w-5 h-5 ml-0.5"></i>
+                </div>
+                <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                  Meet the Team
+                </div>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
+                MediMRF Team Overview
+              </h3>
+              <p class="text-slate-500 text-xs mt-1.5 line-clamp-2">
+                Meet the minds behind the technology and our multidisciplinary environmental engineering initiative.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+              <span>Watch Video</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Card 3: Bren School Project Site -->
+          <a 
+            href="https://bren.ucsb.edu/projects/medimrf-automated-waste-sorting-healthcare-eco-e" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="group bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="relative w-full h-40 bg-gradient-to-br from-blue-900 to-slate-900 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+                <div class="w-12 h-12 rounded-full bg-white/10 text-blue-300 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform">
+                  <i data-lucide="book-open" class="w-6 h-6"></i>
+                </div>
+                <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                  UC Santa Barbara
+                </div>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
+                Bren Eco-E Project Page
+              </h3>
+              <p class="text-slate-500 text-xs mt-1.5 line-clamp-2">
+                Detailed thesis background, market assessment, environmental footprint modeling, and project briefs.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+              <span>Read Project Brief</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Card 4: Vimeo Academic Presentation -->
+          <a 
+            href="https://vimeo.com/1197585253?share=copy&fl=sv&fe=ci" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="group bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="relative w-full h-40 bg-gradient-to-br from-sky-900 to-slate-950 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                <div class="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <i data-lucide="presentation" class="w-6 h-6"></i>
+                </div>
+                <div class="absolute bottom-3 left-3 z-20 text-xs font-semibold text-white/90 bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                  Vimeo Stream
+                </div>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
+                Academic Presentation
+              </h3>
+              <p class="text-slate-500 text-xs mt-1.5 line-clamp-2">
+                Watch our formal master's defense presentation reviewing LCA metrics, technical validation, and unit economics.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+              <span>View Presentation</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Inquiries Callout -->
+    <section id="contact" class="py-16 sm:py-24 bg-white relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-gradient-to-b from-slate-900 to-slate-950 rounded-3xl p-8 sm:p-12 text-white relative shadow-2xl border border-slate-800 text-center">
+          
+          <div class="w-14 h-14 bg-brand-500/20 text-brand-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="mail-check" class="w-7 h-7"></i>
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+            Interested in Piloting or Partnering?
+          </h2>
+          
+          <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto mb-8 font-light">
+            We are actively collaborating with hospital facility directors, healthcare sustainability coordinators, and material recovery specialists.
+          </p>
+
+          <!-- Email Copy & Mailto Wrapper -->
+          <div class="inline-flex flex-col sm:flex-row items-center gap-3 bg-slate-800/80 p-2 sm:p-2.5 rounded-2xl border border-slate-700/80 max-w-xl mx-auto w-full justify-between">
+            <div class="flex items-center gap-3 px-3 py-1 text-slate-200 font-mono text-sm sm:text-base break-all select-all">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-400 shrink-0"></i>
+              <span id="email-address">medimrfcompany@gmail.com</span>
+            </div>
+            
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+              <!-- Copy Button -->
+              <button 
+                id="copy-btn"
+                onclick="copyEmail()" 
+                class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-medium transition-colors">
+                <i data-lucide="copy" class="w-3.5 h-3.5" id="copy-icon"></i>
+                <span id="copy-text">Copy</span>
+              </button>
+              
+              <!-- Direct Mailto -->
+              <a 
+                href="mailto:medimrfcompany@gmail.com" 
+                class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-semibold transition-colors">
+                <span>Send Email</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div id="copy-feedback" class="text-xs text-brand-300 mt-3 h-4 opacity-0 transition-opacity duration-300">
+            Email address copied to clipboard!
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <!-- Footer Simple Logo Icon -->
+        <div class="flex items-baseline font-bold text-xl text-white">
+          <span>Medi</span><span class="text-brand-400">MRF</span>
+        </div>
+        <span class="text-slate-600">|</span>
+        <span class="text-xs text-slate-400">Automated Waste Sorting for Healthcare</span>
+      </div>
+
+      <div class="text-center md:text-right text-xs text-slate-500 space-y-1">
+        <p>© <span id="year"></span> MediMRF. All rights reserved.</p>
+        <p>A venture rooted in UC Santa Barbara's Bren School of Environmental Science & Management.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Dynamically set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Clipboard copy functionality with fallback for iframe sandboxes
+    function copyEmail() {
+      const email = 'medimrfcompany@gmail.com';
+      const feedback = document.getElementById('copy-feedback');
+      const copyText = document.getElementById('copy-text');
+      
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        copyText.textContent = "Copied!";
+        feedback.style.opacity = "1";
+        setTimeout(() => {
+          copyText.textContent = "Copy";
+          feedback.style.opacity = "0";
+        }, 3000);
+      } catch (err) {
+        console.error('Copy fallback failed', err);
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    }
+  </script>
+</body>
+</html>
