@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MediMRF | Automated Sorting for Healthcare</title>
+  <title>MediMRF | Automated Healthcare Waste Sorting</title>
   <meta name="description" content="Cutting waste disposal costs, mitigating human health and regulatory risk, and driving clinical sustainability with automated post-disposal waste sorting for healthcare.">
   
   <!-- Google Fonts: Inter for crisp typography, Oswald for brand wordmark -->
@@ -63,23 +63,27 @@
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- MediMRF Official SVG Logo -->
+      <!-- MediMRF Official Vector Logo (Always Renders Without 404s) -->
       <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="MediMRF Home">
-        <svg class="h-9 sm:h-11 w-auto max-w-full" viewBox="0 0 520 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Condensed Medi in Black -->
-          <text x="0" y="82" font-family="'Oswald', 'Arial Black', sans-serif" font-weight="700" font-size="94" letter-spacing="-1.5" fill="#000000">Medi</text>
-          <!-- Vibrant Blue MRF -->
-          <text x="214" y="82" font-family="'Oswald', 'Arial Black', sans-serif" font-weight="700" font-size="94" letter-spacing="-1.5" fill="#1A8CFF">MRF</text>
-          <!-- Isometric Medical Cube -->
-          <g transform="translate(415, 12)">
-            <path d="M52 3 L98 25 L52 47 L6 25 Z" fill="#38BDF8"/>
-            <path d="M6 25 L52 47 L52 74 L6 52 Z" fill="#0284C7"/>
-            <path d="M52 47 L98 25 L98 52 L52 74 Z" fill="#0369A1"/>
-            <path d="M6 25 L52 47 L98 25" stroke="#BAE6FD" stroke-width="1.8" fill="none"/>
-            <path d="M52 47 L52 74" stroke="#075985" stroke-width="1.4" fill="none"/>
+        <svg class="h-10 sm:h-12 w-auto max-w-full" viewBox="0 0 540 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Condensed Medi in Solid Black -->
+          <text x="2" y="83" font-family="'Oswald', 'Arial Black', sans-serif" font-weight="700" font-size="98" letter-spacing="-2.5" fill="#000000">Medi</text>
+          <!-- Vibrant Royal Blue MRF -->
+          <text x="220" y="83" font-family="'Oswald', 'Arial Black', sans-serif" font-weight="700" font-size="98" letter-spacing="-2.5" fill="#1A8CFF">MRF</text>
+          <!-- Official 3D Isometric Medical Box -->
+          <g transform="translate(425, 8)">
+            <!-- Top Plane -->
+            <path d="M54 2 L103 26 L54 50 L5 26 Z" fill="#38BDF8"/>
+            <!-- Left Facet -->
+            <path d="M5 26 L54 50 L54 79 L5 55 Z" fill="#0284C7"/>
+            <!-- Right Facet -->
+            <path d="M54 50 L103 26 L103 55 L54 79 Z" fill="#0369A1"/>
+            <!-- Bevel Highlight & Shadow Borders -->
+            <path d="M5 26 L54 50 L103 26" stroke="#BAE6FD" stroke-width="2" fill="none"/>
+            <path d="M54 50 L54 79" stroke="#0c4a6e" stroke-width="1.8" fill="none"/>
             <!-- White Medical Cross on Top Isometric Plane -->
-            <g transform="translate(52, 25)">
-              <path d="M -5 -9 L 5 -4 L 5 -1 L 14 3.5 L 10 9 L 1 4.5 L 1 11 L -9 6 L -9 -0.5 L -18 -5 L -14 -10.5 L -5 -6 Z" fill="#FFFFFF" fill-opacity="0.96"/>
+            <g transform="translate(54, 26)">
+              <polygon points="-5,-10 5,-5 5,-2 15,3 10,9 1,4.5 1,12 -9,7 -9,0.5 -19,-4.5 -14,-10.5 -5,-6" fill="#FFFFFF"/>
             </g>
           </g>
         </svg>
@@ -331,17 +335,18 @@
           
           <!-- Founder: Ryan Stanley -->
           <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
-            <div class="sm:w-2/5 relative bg-slate-200 min-h-[260px] sm:min-h-full">
-              <!-- Relative image path with graceful fallback -->
+            <div class="sm:w-2/5 relative bg-slate-100 min-h-[300px] sm:min-h-full overflow-hidden">
               <img 
+                id="ryan-photo"
                 src="ryan.jpg" 
+                data-fallbacks="Ryan.jpg,ryan.png,Ryan.png,Ryan Stanley_Bren MESM Headshots 2024_0003.jpg,Ryan%20Stanley_Bren%20MESM%20Headshots%202024_0003.jpg"
                 alt="Ryan Stanley" 
-                class="w-full h-full object-cover object-top absolute inset-0"
-                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                class="w-full h-full object-cover object-top absolute inset-0 transition-opacity duration-300"
+                onerror="handleImageFallback(this, 'RS', 'Ryan Stanley')"
               />
-              <div class="hidden w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-slate-200 text-slate-600 p-6 text-center">
-                <span class="w-16 h-16 rounded-full bg-white text-brand-blue font-bold text-2xl flex items-center justify-center shadow-sm mb-2">RS</span>
-                <span class="text-xs font-semibold text-slate-500">Ryan Stanley</span>
+              <div id="ryan-photo-fallback" class="hidden w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-slate-200 p-6 text-center">
+                <span class="w-16 h-16 rounded-full bg-brand-blue text-white font-bold text-2xl flex items-center justify-center shadow-md mb-2">RS</span>
+                <span class="text-sm font-semibold text-slate-700">Ryan Stanley</span>
               </div>
             </div>
             
@@ -372,17 +377,18 @@
 
           <!-- Founder: Nicholas Leong -->
           <div class="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row">
-            <div class="sm:w-2/5 relative bg-slate-200 min-h-[260px] sm:min-h-full">
-              <!-- Relative image path with graceful fallback -->
+            <div class="sm:w-2/5 relative bg-slate-100 min-h-[300px] sm:min-h-full overflow-hidden">
               <img 
+                id="nick-photo"
                 src="nick.jpg" 
+                data-fallbacks="Nick.jpg,nick.png,Nick.png,Nicholas Leong_Bren MESM Headshots 2024_0001.jpg,Nicholas%20Leong_Bren%20MESM%20Headshots%202024_0001.jpg"
                 alt="Nicholas Leong" 
-                class="w-full h-full object-cover object-top absolute inset-0"
-                onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                class="w-full h-full object-cover object-top absolute inset-0 transition-opacity duration-300"
+                onerror="handleImageFallback(this, 'NL', 'Nicholas Leong')"
               />
-              <div class="hidden w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-slate-200 text-slate-600 p-6 text-center">
-                <span class="w-16 h-16 rounded-full bg-white text-brand-blue font-bold text-2xl flex items-center justify-center shadow-sm mb-2">NL</span>
-                <span class="text-xs font-semibold text-slate-500">Nicholas Leong</span>
+              <div id="nick-photo-fallback" class="hidden w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-slate-200 p-6 text-center">
+                <span class="w-16 h-16 rounded-full bg-brand-blue text-white font-bold text-2xl flex items-center justify-center shadow-md mb-2">NL</span>
+                <span class="text-sm font-semibold text-slate-700">Nicholas Leong</span>
               </div>
             </div>
             
@@ -573,7 +579,7 @@
       <div class="flex items-center gap-2">
         <span class="font-bold text-slate-800">MediMRF</span>
         <span>•</span>
-        <span>Automated Sorting for Healthcare</span>
+        <span>Automated Healthcare Waste Sorting</span>
       </div>
       <div>
         <span>Bren School of Environmental Science & Management Eco-E Project</span>
@@ -591,6 +597,24 @@
 
     // Dynamic current year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Cascading image fallback system to automatically test multiple filename permutations
+    function handleImageFallback(imgElem, initials, fullName) {
+      const fallbackList = (imgElem.getAttribute('data-fallbacks') || '').split(',').map(s => s.trim()).filter(Boolean);
+      const currentIndex = parseInt(imgElem.getAttribute('data-fallback-index') || '0', 10);
+      
+      if (currentIndex < fallbackList.length) {
+        imgElem.setAttribute('data-fallback-index', (currentIndex + 1).toString());
+        imgElem.src = fallbackList[currentIndex];
+      } else {
+        // All candidate paths exhausted: reveal clean monogram card
+        imgElem.style.display = 'none';
+        const fallbackContainer = imgElem.nextElementSibling;
+        if (fallbackContainer) {
+          fallbackContainer.classList.remove('hidden');
+        }
+      }
+    }
 
     // Clipboard copy with iframe-safe fallback
     function copyEmail() {
