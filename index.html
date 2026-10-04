@@ -315,7 +315,7 @@
       </div>
     </section>
 
-    <!-- Meet the Founders Section (Bigger, Cleanly Filled Portrait Layout) -->
+    <!-- Meet the Founders Section (Edge-to-Edge Photo Hugging + Two-Line Academic Credentials) -->
     <section id="founders" class="py-20 bg-slate-100/70 border-b border-slate-200/80">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -332,18 +332,18 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
           <!-- Founder: Ryan Stanley -->
-          <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row items-center gap-6">
-            <!-- Enlarged photo box to fill the space cleanly -->
-            <div class="w-48 h-56 sm:w-48 sm:h-56 flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden border border-slate-200 flex-shrink-0">
+          <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <!-- Box hugs exact natural portrait aspect ratio: zero empty margins -->
+            <div class="w-40 sm:w-44 rounded-xl overflow-hidden border border-slate-200 shadow-sm flex-shrink-0 bg-slate-100">
               <img 
                 id="ryan-photo"
                 src="ryan.jpg" 
                 data-fallbacks="Ryan.jpg,ryan.png,Ryan.png,Ryan Stanley_Bren MESM Headshots 2024_0003.jpg,Ryan%20Stanley_Bren%20MESM%20Headshots%202024_0003.jpg"
                 alt="Ryan Stanley" 
-                class="w-full h-full object-contain"
+                class="w-full h-auto block"
                 onerror="handleImageFallback(this, 'RS', 'Ryan Stanley')"
               />
-              <div id="ryan-photo-fallback" class="hidden w-full h-full flex flex-col items-center justify-center bg-slate-100 text-center p-4">
+              <div id="ryan-photo-fallback" class="hidden w-full aspect-[2/3] flex flex-col items-center justify-center bg-slate-100 text-center p-4">
                 <span class="w-14 h-14 rounded-full bg-brand-blue text-white font-bold text-xl flex items-center justify-center mb-1">RS</span>
                 <span class="text-xs font-semibold text-slate-700">Ryan Stanley</span>
               </div>
@@ -352,16 +352,25 @@
             <div class="flex-1 text-center sm:text-left">
               <div class="text-xs font-bold uppercase tracking-wider text-brand-blue mb-1">Co-Founder</div>
               <h3 class="text-xl font-bold text-slate-950">Ryan Stanley</h3>
-              <p class="text-sm font-medium text-slate-600 mb-3">Project Management & Financials</p>
+              <p class="text-sm font-medium text-slate-600 mb-4">Project Management & Financials</p>
               
-              <div class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-3">
-                <div class="flex items-start justify-center sm:justify-start gap-2">
+              <div class="space-y-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3">
+                <!-- MESM: Bold degree on line 1, University/Year on line 2 -->
+                <div class="flex items-start justify-center sm:justify-start gap-2.5">
                   <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5"></i>
-                  <span><strong>Master of Environmental Science & Management (MESM)</strong>, Bren School @ UCSB, 2026</span>
+                  <div class="leading-snug">
+                    <div class="font-bold text-slate-900">Master of Environmental Science & Management (MESM)</div>
+                    <div class="text-slate-600">UC Santa Barbara Bren School, 2026</div>
+                  </div>
                 </div>
-                <div class="flex items-start justify-center sm:justify-start gap-2">
+                
+                <!-- B.S.: Bold degree on line 1, University/Year on line 2 -->
+                <div class="flex items-start justify-center sm:justify-start gap-2.5">
                   <i data-lucide="award" class="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5"></i>
-                  <span><strong>B.S.</strong> Environmental Science, University of Southern California (USC), 2024</span>
+                  <div class="leading-snug">
+                    <div class="font-bold text-slate-900">B.S. Environmental Science</div>
+                    <div class="text-slate-600">University of Southern California (USC), 2024</div>
+                  </div>
                 </div>
               </div>
 
@@ -372,18 +381,18 @@
           </div>
 
           <!-- Founder: Nicholas Leong -->
-          <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row items-center gap-6">
-            <!-- Enlarged photo box to fill the space cleanly -->
-            <div class="w-48 h-56 sm:w-48 sm:h-56 flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden border border-slate-200 flex-shrink-0">
+          <div class="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            <!-- Box hugs exact natural portrait aspect ratio: zero empty margins -->
+            <div class="w-40 sm:w-44 rounded-xl overflow-hidden border border-slate-200 shadow-sm flex-shrink-0 bg-slate-100">
               <img 
                 id="nick-photo"
                 src="nick.jpg" 
                 data-fallbacks="Nick.jpg,nick.png,Nick.png,Nicholas Leong_Bren MESM Headshots 2024_0001.jpg,Nicholas%20Leong_Bren%20MESM%20Headshots%202024_0001.jpg"
                 alt="Nicholas Leong" 
-                class="w-full h-full object-contain"
+                class="w-full h-auto block"
                 onerror="handleImageFallback(this, 'NL', 'Nicholas Leong')"
               />
-              <div id="nick-photo-fallback" class="hidden w-full h-full flex flex-col items-center justify-center bg-slate-100 text-center p-4">
+              <div id="nick-photo-fallback" class="hidden w-full aspect-[2/3] flex flex-col items-center justify-center bg-slate-100 text-center p-4">
                 <span class="w-14 h-14 rounded-full bg-brand-blue text-white font-bold text-xl flex items-center justify-center mb-1">NL</span>
                 <span class="text-xs font-semibold text-slate-700">Nicholas Leong</span>
               </div>
@@ -392,16 +401,25 @@
             <div class="flex-1 text-center sm:text-left">
               <div class="text-xs font-bold uppercase tracking-wider text-brand-blue mb-1">Co-Founder</div>
               <h3 class="text-xl font-bold text-slate-950">Nicholas Leong</h3>
-              <p class="text-sm font-medium text-slate-600 mb-3">Communications & Data</p>
+              <p class="text-sm font-medium text-slate-600 mb-4">Communications & Data</p>
               
-              <div class="space-y-2 text-xs text-slate-600 border-t border-slate-100 pt-3">
-                <div class="flex items-start justify-center sm:justify-start gap-2">
+              <div class="space-y-3 text-xs sm:text-sm text-slate-600 border-t border-slate-100 pt-3">
+                <!-- MESM: Bold degree on line 1, University/Year on line 2 -->
+                <div class="flex items-start justify-center sm:justify-start gap-2.5">
                   <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5"></i>
-                  <span><strong>Master of Environmental Science & Management (MESM)</strong>, Bren School @ UCSB, 2026</span>
+                  <div class="leading-snug">
+                    <div class="font-bold text-slate-900">Master of Environmental Science & Management (MESM)</div>
+                    <div class="text-slate-600">UC Santa Barbara Bren School, 2026</div>
+                  </div>
                 </div>
-                <div class="flex items-start justify-center sm:justify-start gap-2">
+                
+                <!-- B.S.: Bold degree on line 1, University/Year on line 2 -->
+                <div class="flex items-start justify-center sm:justify-start gap-2.5">
                   <i data-lucide="award" class="w-4 h-4 text-brand-blue flex-shrink-0 mt-0.5"></i>
-                  <span><strong>B.S.</strong> Environmental Science, University of California, Los Angeles (UCLA), 2024</span>
+                  <div class="leading-snug">
+                    <div class="font-bold text-slate-900">B.S. Environmental Science</div>
+                    <div class="text-slate-600">University of California, Los Angeles (UCLA), 2024</div>
+                  </div>
                 </div>
               </div>
 
