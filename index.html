@@ -90,8 +90,10 @@
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
           <a href="#overview" class="hover:text-brand-blue transition-colors">Overview</a>
           <a href="#technology" class="hover:text-brand-blue transition-colors">Technology</a>
+          <a href="#funding" class="hover:text-brand-blue transition-colors">Funding</a>
+          <a href="#careers" class="hover:text-brand-blue transition-colors">Engineering</a>
           <a href="#founders" class="hover:text-brand-blue transition-colors">Founders</a>
-          <a href="#media" class="hover:text-brand-blue transition-colors">Media & Research</a>
+          <a href="#media" class="hover:text-brand-blue transition-colors">Media</a>
         </nav>
 
         <a href="#contact" class="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-sm">
@@ -170,71 +172,76 @@
       </div>
     </section>
 
-    <!-- Technology Section -->
-    <section id="technology" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-xs font-bold uppercase tracking-wider text-brand-blue">System Architecture</h2>
-          <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">Engineered for Hospital Reality</p>
-          <p class="mt-3 text-slate-600 text-sm sm:text-base">Solving the clinical sorting problem at the facility perimeter rather than adding burden to patient care floors.</p>
+    <!-- Funding & Milestones Banner -->
+    <section id="funding" class="py-12 bg-slate-100/80 border-t border-slate-200/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 flex-shrink-0">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100/70 text-emerald-800 mb-1.5">
+                Funding Milestone
+              </div>
+              <h3 class="text-xl font-bold text-slate-950">Raised $42,500 in Seed & Fellowship Funding</h3>
+              <p class="mt-1 text-sm text-slate-600 max-w-xl">
+                Supported through non-dilutive grants, competitions, and venture fellowships. For tax-deductible donations, research grants, or philanthropic partnerships, please reach out directly.
+              </p>
+            </div>
+          </div>
+          <div class="flex-shrink-0 w-full md:w-auto text-center md:text-right">
+            <a href="mailto:medimrfcompany@gmail.com?subject=MediMRF%20Funding%20/%20Donation%20Inquiry" class="inline-flex items-center justify-center gap-2 w-full md:w-auto px-5 py-2.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-colors shadow-sm">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Donations & Inquiries</span>
+            </a>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          <!-- Pillar 1: AI Computer Vision & Robotic Sorting -->
-          <div class="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-blue-100/80 flex items-center justify-center text-brand-blue mb-6">
-                <i data-lucide="scan" class="w-6 h-6"></i>
+    <!-- Join Our Team / Engineering Opportunities -->
+    <section id="careers" class="py-16 bg-white border-t border-slate-200/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 text-white p-8 sm:p-12 shadow-xl border border-slate-800">
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-blue/20 text-sky-400 border border-brand-blue/30 mb-4">
+                <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+                <span>We're Collaborating & Building</span>
               </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">AI Computer Vision & Robotic Sorting</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                Automated optical inspection and precision sorting classify incoming Municipal Solid Waste (MSW) streams into recyclables, organics, and landfill fractions—while detecting and isolating improperly disposed Regulated Medical Waste (RMW), hazardous items, sharps, and clinical materials with high precision.
+              <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Looking for Engineers & Builders</h2>
+              <p class="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                We are actively seeking technical collaborators and engineers passionate about circular economy infrastructure to assist us with rapid prototyping and hardware-software system integration.
               </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-200 text-xs text-brand-blue font-semibold flex items-center gap-1.5">
-              <i data-lucide="shield-check" class="w-4 h-4"></i>
-              <span>High-Precision Hazard Detection</span>
-            </div>
-          </div>
-
-          <!-- Pillar 2: Loading Dock Integration -->
-          <div class="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-sky-100 flex items-center justify-center text-sky-600 mb-6">
-                <i data-lucide="layout-grid" class="w-6 h-6"></i>
+              
+              <div class="mt-6 flex flex-wrap gap-2.5">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200">
+                  <i data-lucide="cpu" class="w-3.5 h-3.5 text-sky-400"></i> Computer Vision
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-blue"></i> AI & Deep Learning Models
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200">
+                  <i data-lucide="cog" class="w-3.5 h-3.5 text-emerald-400"></i> Robotics & Actuation
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/90 border border-slate-700 text-xs font-semibold text-slate-200">
+                  <i data-lucide="wrench" class="w-3.5 h-3.5 text-amber-400"></i> Mechatronics & Hardware Prototyping
+                </span>
               </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">Loading Dock Integration</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                Designed with a compact footprint engineered specifically to fit seamlessly into existing hospital loading bay docks. The unit adapts to standard facility roll carts, compactor layouts, and environmental services (EVS) workflows without requiring structural dock overhauls.
-              </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-200 text-xs text-sky-600 font-semibold flex items-center gap-1.5">
-              <i data-lucide="box" class="w-4 h-4"></i>
-              <span>Minimal Spatial Footprint</span>
-            </div>
-          </div>
 
-          <!-- Pillar 3: Waste Diversion & Risk Mitigation -->
-          <div class="p-8 rounded-2xl bg-slate-50/80 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-brand-blue/30 transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 mb-6">
-                <i data-lucide="trending-up" class="w-6 h-6"></i>
-              </div>
-              <h3 class="text-xl font-bold text-slate-900 mb-3">Waste Diversion & Risk Mitigation</h3>
-              <p class="text-slate-600 text-sm leading-relaxed">
-                Redirects misclassified waste streams and prevents costly overclassification, significantly mitigating disposal expenses while dramatically accelerating waste diversion benchmarks and healthcare system ESG sustainability commitments.
-              </p>
+            <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
+              <a href="mailto:medimrfcompany@gmail.com?subject=Engineering%20Collaboration%20-%20MediMRF" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-xl bg-brand-blue hover:bg-brand-darkBlue text-white transition-all shadow-lg shadow-brand-blue/30 hover:shadow-brand-blue/50">
+                <span>Connect With the Team</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <span class="text-xs text-slate-400 mt-2.5">medimrfcompany@gmail.com</span>
             </div>
-            <div class="mt-6 pt-4 border-t border-slate-200 text-xs text-emerald-600 font-semibold flex items-center gap-1.5">
-              <i data-lucide="recycle" class="w-4 h-4"></i>
-              <span>Accelerated Diversion & ESG Goals</span>
-            </div>
-          </div>
 
+          </div>
         </div>
-
       </div>
     </section>
 
@@ -353,7 +360,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <!-- Card 1: Product Concept Video (Explicitly distinguished) -->
+          <!-- Card 1: Product Concept Video -->
           <div id="concept-video" class="bg-slate-50 rounded-2xl border border-slate-200/90 overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all group">
             <div class="p-6">
               <div class="flex items-center justify-between mb-4">
@@ -363,15 +370,11 @@
                 <i data-lucide="youtube" class="w-5 h-5 text-red-600"></i>
               </div>
               <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-blue transition-colors">
-                MediMRF System Concept
+                MediMRF Concept Video
               </h3>
               <p class="mt-2 text-xs text-slate-600 leading-relaxed">
-                An animated walkthrough illustrating the conceptual downstream loading bay architecture, robotic separation, and AI optical scanning logic.
+                An informative conceptual video detailing the MediMRF system architecture, operational post-disposal workflow, and healthcare sustainability value proposition.
               </p>
-              <div class="mt-4 inline-flex items-center gap-1.5 text-[11px] text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">
-                <i data-lucide="info" class="w-3.5 h-3.5"></i>
-                <span>Architectural simulation • Not demo</span>
-              </div>
             </div>
             <div class="p-4 bg-slate-100/80 border-t border-slate-200">
               <a href="https://youtu.be/0gG8oQqV74Q?si=59xn70BxoUJmeYLB" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-2 text-xs font-semibold rounded-lg bg-white border border-slate-300 text-slate-800 hover:bg-slate-50 transition-colors shadow-sm">
